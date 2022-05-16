@@ -1,0 +1,346 @@
+@font-face {
+    font-family: NightinTokyo-Bold;
+    src: url("/fonts/night-in-tokyo/NightinTokyo-Bold.ttf");
+}
+
+body {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 400px auto;
+    grid-template-rows: 300px auto 90px;
+    grid-template-areas:
+            "header header"
+            "aside main"
+            "footer footer";
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    background-color: #91d7ff;
+}
+
+header {
+    grid-area: header;
+    border: ridge #65b889;
+    border-radius: 20px;
+    background-color: #80ffb7;
+    box-shadow: 5px 5px 10px #000f26;
+}
+header h1 {
+    font-size: 90pt;
+    font-family: NightinTokyo-Bold;
+    margin-top: 130px;
+    margin-left: 350px;
+    color: black;
+}
+header img.bild-rechts {
+    width: 600px;
+    height: 290px;
+    margin-top: -330px;
+    float: right;
+}
+header img.bild-links {
+    width: 350px;
+    height: 180px;
+    margin-top: -320px;
+    float: left;
+}
+
+#sidebar {
+    position: fixed;
+    top: 45%;
+    margin-top: -175px;
+    transition: 1s ease;
+    z-index: 999;
+}
+button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: ridge #65b889;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #80ffb7;
+    box-shadow: 5px 5px 10px #000f26;
+    margin-left: 200px;
+    margin-top: 20px;
+}
+button:hover {
+    border: ridge #b865a5;
+    background-color: #ffe6f7;
+}
+button img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    height: 60%;
+    transition: 1s ease;
+
+}
+.hidden {
+    transform: translateX(-215px);
+}
+.rotate {
+    transform: rotate(-180deg);
+}
+
+nav {
+    position: absolute;
+    min-width: 200px;
+    min-height: 350px;
+    font-family: "Segoe UI";
+    border: ridge #65b889;
+    border-radius: 20px;
+    background-color: #80ffb7;
+    box-shadow: 5px 5px 10px #000f26;
+}
+nav div {
+    padding: 10px;
+}
+nav span {
+    font-weight: bold;
+}
+nav a,span {
+    font-size: 15pt;
+    color: black;
+    text-decoration: none;
+    display: block;
+    line-height: 30px;
+}
+nav a.tier {
+    padding-left: 20px;
+}
+nav a.tier::before {
+    content: "- ";
+}
+nav a,span::after {
+    content: "";
+}
+nav a.selected {
+    font-weight: bold;
+    text-decoration: underline;
+}
+nav a:hover {
+    color: #ff42aa;
+    font-weight: bold;
+}
+
+main {
+    grid-area: main;
+    padding: 10px;
+    font-family: "Segoe UI";
+    font-size: 20px;
+    border: ridge #b865a5;
+    border-radius: 20px;
+    background-color: #ffe6f7;
+    box-shadow: 5px 5px 10px #000f26;
+}
+main #list ul li.uebertitel {
+    font-weight: bold;
+}
+/* Slideshow */
+main .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    float: right;
+    margin-top: -230px;
+    margin-right: 50px;
+}
+main .mySlides img {
+    width: 100%;
+    vertical-align: middle;
+}
+main .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+main .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+main .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+main .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+main .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+aside {
+    grid-area: aside;
+    padding: 10px;
+    font-family: "Segoe UI";
+    font-size: 20px;
+    border: ridge #b865a5;
+    border-radius: 20px;
+    background-color: #ffe6f7;
+    box-shadow: 5px 5px 10px #000f26;
+}
+aside div {
+    text-align: center;
+}
+aside div iframe {
+    width: 300px;
+    height: 300px;
+}
+aside h3 {
+    line-height: 3px;
+}
+aside address {
+    font-size: 12pt;
+}
+
+footer {
+    grid-area: footer;
+    padding: 10px;
+    font-family: "Segoe UI";
+    font-size: 15px;
+    border: ridge #b865a5;
+    border-radius: 20px;
+    background-color: #ffe6f7;
+    box-shadow: 5px 5px 10px #000f26;
+}
+footer img {
+    width: 100px;
+    height: 60px;
+    float: right;
+    margin-top: -15px;
+    margin-right: -10px;
+}
+
+@media (max-width: 2050px) {
+    #start header h1 {
+        font-size: 70pt;
+        margin-top: 150px;
+        margin-left: 250px;
+    }
+    #start header img.bild-rechts {
+        margin-top: -305px;
+    }
+    #start header img.bild-links {
+        margin-top: -295px;
+    }
+}
+
+@media (max-width: 1830px) {
+    main .slideshow-container {
+        float: unset;
+        margin: auto;
+    }
+}
+
+@media (max-width: 1700px) {
+    #start header h1 {
+        font-size: 55pt;
+        margin-top: 165px;
+    }
+    #start header img.bild-rechts {
+        margin-top: -285px;
+    }
+    #start header img.bild-links {
+        margin-top: -275px;
+    }
+}
+
+@media (max-width: 1500px) {
+    header h1 {
+        margin-left: 50px;
+    }
+    #start header h1 {
+        margin-left: 50px;
+    }
+    #start header img.bild-rechts {
+        margin-top: -285px;
+    }
+    header img.bild-links {
+        display: none;
+    }
+}
+
+@media (max-width: 1300px) {
+    #start header img.bild-rechts {
+        width: 350px;
+        height: 170px;
+    }
+    #impressum header img.bild-rechts {
+        width: 290px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 1000px) {
+    body {
+        grid-template-columns: 250px auto;
+    }
+
+    aside div iframe {
+        display: none;
+    }
+    aside h3 {
+        line-height: normal;
+    }
+}
+
+@media (max-width: 830px) {
+    #start header h1 {
+        word-spacing: 100vw;
+        margin-top: 85px;
+    }
+    #start header img.bild-rechts {
+        margin-top: -280px;
+    }
+}
+
+@media (max-width: 750px) {
+    body {
+        grid-template-columns: auto;
+        grid-template-rows: 300px auto 1000px 90px;
+        grid-template-areas:
+            "header"
+            "main"
+            "aside"
+            "footer";
+    }
+
+    #impressum header h1 {
+        font-size: 60pt;
+        margin-top: 160px;
+        margin-left: 20px;
+    }
+    header img.bild-rechts {
+        display: none;
+    }
+
+    aside div iframe {
+        display: unset;
+    }
+    aside h3 {
+        line-height: 3px;
+    }
+}
+
+@media (max-width: 650px) {
+    footer img {
+        display: none;
+    }
+}

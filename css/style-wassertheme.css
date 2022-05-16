@@ -1,0 +1,361 @@
+@font-face {
+    font-family: NightinTokyo-Bold;
+    src: url("/fonts/night-in-tokyo/NightinTokyo-Bold.ttf");
+}
+
+body {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 400px auto;
+    grid-template-rows: 300px auto 90px;
+    grid-template-areas:
+            "header header"
+            "aside main"
+            "footer footer";
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    background-color: #00398f;
+}
+
+header {
+    grid-area: header;
+    border: ridge #001e5e;
+    border-radius: 20px;
+    background-color: #4c6bb0;
+    box-shadow: 5px 5px 10px #000f26;
+}
+header h1 {
+    font-size: 90pt;
+    font-family: NightinTokyo-Bold;
+    margin-top: 130px;
+    margin-left: 350px;
+    color: white;
+}
+header img.bild-rechts {
+    width: 500px;
+    height: 290px;
+    margin-top: -330px;
+    margin-right: 50px;
+    float: right;
+}
+header img.bild-links {
+    width: 300px;
+    height: 290px;
+    margin-top: -330px;
+    margin-left: 30px;
+    float: left;
+}
+
+#sidebar {
+    position: fixed;
+    top: 45%;
+    margin-top: -175px;
+    transition: 1s ease;
+    z-index: 999;
+}
+button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: ridge #001e5e;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #4c6bb0;
+    box-shadow: 5px 5px 10px #000f26;
+    margin-left: 200px;
+    margin-top: 20px;
+}
+button:hover {
+    border: ridge #445d80;
+    background-color: #cfe3ff;
+}
+button img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    height: 60%;
+    transition: 1s ease;
+
+}
+.hidden {
+    transform: translateX(-215px);
+}
+.rotate {
+    transform: rotate(-180deg);
+}
+
+nav {
+    position: absolute;
+    min-width: 200px;
+    min-height: 350px;
+    font-family: "Segoe UI";
+    border: ridge #001e5e;
+    border-radius: 20px;
+    background-color: #4c6bb0;
+    box-shadow: 5px 5px 10px #000f26;
+}
+nav div {
+    padding: 10px;
+}
+nav span {
+    font-weight: bold;
+}
+nav a,span {
+    font-size: 15pt;
+    color: white;
+    text-decoration: none;
+    display: block;
+    line-height: 30px;
+}
+nav a.tier {
+    padding-left: 20px;
+}
+nav a.tier::before {
+    content: "- ";
+}
+nav a,span::after {
+    content: "";
+}
+nav a.selected {
+    font-weight: bold;
+    text-decoration: underline;
+}
+nav a:hover {
+    color: #2d476b;
+    font-weight: bold;
+}
+
+main {
+    grid-area: main;
+    padding: 10px;
+    font-family: "Segoe UI";
+    font-size: 20px;
+    border: ridge #445d80;
+    border-radius: 20px;
+    background-color: #cfe3ff;
+    box-shadow: 5px 5px 10px #000f26;
+    display: grid;
+    grid-template-columns: auto 850px;
+    grid-template-rows: 450px auto;
+    grid-template-areas:
+            "text table"
+            "text img";
+}
+#krabbe main {
+    grid-area: main;
+    padding: 10px;
+    font-family: "Segoe UI";
+    font-size: 20px;
+    border: ridge #445d80;
+    border-radius: 20px;
+    background-color: #cfe3ff;
+    box-shadow: 5px 5px 10px #000f26;
+    display: grid;
+    grid-template-columns: auto 850px;
+    grid-template-rows: 450px auto auto;
+    grid-template-areas:
+            "text table"
+            "text img1"
+            "text img2";
+}
+main #text {
+    grid-area: text;
+}
+main table {
+    grid-area: table;
+    border: ridge #445d80;
+    border-collapse: collapse;
+    height: 450px;
+    width: 100%;
+}
+main table td {
+    border: 1px solid #445d80;
+    background-color: #cfe3ff;
+    text-align: left;
+    padding: 5px;
+}
+main table tr:nth-child(even) td {
+    background-color: #91b4ff;
+}
+main img {
+    margin-top: 20px;
+    grid-area: img;
+    width: 100%;
+}
+#krabbe main img {
+    margin-top: 20px;
+    grid-area: img1;
+    width: 100%;
+}
+#krabbe main #img2 {
+    margin-top: 20px;
+    grid-area: img2;
+    width: 100%;
+}
+
+aside {
+    grid-area: aside;
+    padding: 10px;
+    font-family: "Segoe UI";
+    font-size: 20px;
+    border: ridge #445d80;
+    border-radius: 20px;
+    background-color: #cfe3ff;
+    box-shadow: 5px 5px 10px #000f26;
+}
+aside div {
+    text-align: center;
+}
+aside div iframe {
+    width: 300px;
+    height: 300px;
+}
+aside h3 {
+    line-height: 3px;
+}
+aside address {
+    font-size: 12pt;
+}
+
+footer {
+    grid-area: footer;
+    padding: 10px;
+    font-family: "Segoe UI";
+    font-size: 15px;
+    border: ridge #445d80;
+    border-radius: 20px;
+    background-color: #cfe3ff;
+    box-shadow: 5px 5px 10px #000f26;
+}
+footer img {
+    width: 100px;
+    height: 60px;
+    float: right;
+    margin-top: -15px;
+    margin-right: -10px;
+}
+
+@media (max-width: 2300px) {
+    main {
+        grid-template-columns: auto 600px;
+    }
+    #krabbe main {
+        grid-template-columns: auto 600px;
+    }
+
+    #krabbe header h1 {
+        margin-left: 50px;
+    }
+    #krabbe header img.bild-links {
+        display: none;
+    }
+}
+
+@media (max-width: 2000px) {
+    #krabbe header h1 {
+        word-spacing: 100vw;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 1400px) {
+    main {
+        grid-template-columns: auto;
+        grid-template-rows: auto 450px auto;
+        grid-template-areas:
+                "text"
+                "table"
+                "img";
+    }
+    #krabbe main {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto 450px auto;
+        grid-template-areas:
+                "img2"
+                "text"
+                "table"
+                "img1";
+    }
+
+    #krabbe header img.bild-rechts {
+        display: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    header img.bild-links {
+        display: none;
+    }
+
+    header h1 {
+        margin-left: 50px;
+    }
+    #krabbe header h1 {
+        font-size: 65pt;
+        margin-top: 70px;
+    }
+}
+
+@media (max-width: 1100px) {
+    body {
+        grid-template-columns: 250px auto;
+    }
+
+    #krabbe header h1 {
+        font-size: 60pt;
+        margin-top: 80px;
+        margin-left: 15px;
+    }
+
+    aside div iframe {
+        display: none;
+    }
+    aside h3 {
+        line-height: normal;
+    }
+}
+
+@media (max-width: 830px) {
+    header img.bild-rechts {
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 785px) {
+    body {
+        grid-template-columns: auto;
+        grid-template-rows: 300px auto 1000px 90px;
+        grid-template-areas:
+            "header"
+            "main"
+            "aside"
+            "footer";
+    }
+
+    header img.bild-rechts {
+        width: 350px;
+        height: 220px;
+        margin-top: -300px;
+    }
+
+    aside div iframe {
+        display: unset;
+    }
+    aside h3 {
+        line-height: 3px;
+    }
+}
+
+@media (max-width: 650px) {
+    header img.bild-rechts {
+        display: none;
+    }
+    footer img {
+        display: none;
+    }
+    #krabbe header h1 {
+        font-size: 50pt;
+        margin-top: 100px;
+    }
+}
