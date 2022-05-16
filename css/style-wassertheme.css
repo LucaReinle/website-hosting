@@ -1,6 +1,6 @@
 @font-face {
     font-family: NightinTokyo-Bold;
-    src: url("/fonts/night-in-tokyo/NightinTokyo-Bold.ttf");
+    src: url("../fonts/night-in-tokyo/NightinTokyo-Bold.ttf");
 }
 
 body {
